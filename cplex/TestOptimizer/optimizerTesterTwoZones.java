@@ -10,7 +10,8 @@ public class optimizerTester {
 		int HOUR = 10; //hours in a year in this test
 		int ZONES = 2; // number of zones in model
 		int[] zones = {1, 2}; // zones in model
-		double[] load = {1, 10, 1, 10, 1, 10, 1, 10, 1, 10}; // load per Hour
+		double[] loadA = {1, 10, 1, 10, 1, 10, 1, 10, 1, 10}; // load per Hour zone A
+		double[] loadB = {2, 10, 2, 10, 2, 10, 2, 10, 2, 10}; // load per Hour zone B
 		double maxEnergycontentStorage = 10;
 		double minEnergycontentStorage = 0;
 		double initialStorage = 0;
@@ -22,6 +23,8 @@ public class optimizerTester {
 		double minMarketFlowIn = 0;
 		double maxMarketFlowOut = 10;
 		double minMarketFlowOut = 0;
+		double minInterCap = 0;
+		double maxInterCap = 5;
 		double n = 0.90; // Storage efficiency
 		double nInv = 1/n; // Inverse efficiency
 		
@@ -60,8 +63,15 @@ public class optimizerTester {
 			IloNumVar[][] P = new IloNumVar[][];
 			for (int i = 0; i < ZONES; i++) {
 				P[i] = cplex.NumVarArray(HOUR, ZONES[i], ZONES[i]);
-				for (int j = 0; j < HOUR) {
-					P[i][j] = cplex.NumVar(load[j], load[j])
+				if(i == 0){
+					for (int j = 0; j < HOUR; j++) {
+						P[i][j] = cplex.NumVar(loadA[j], loadA[j])
+					}
+				}
+				if (i == 1){
+					for (int j = 0; j < HOUR; j++){
+						P[i][j] = cplex.NumVar(loadB[j], loadB[j])
+					}
 				}
 			}
 			
@@ -76,7 +86,14 @@ public class optimizerTester {
 			IloNumVar[][] mOut = new IloNumVar[][];
 			for (int i = 0; i < ZONES; i++){
 				mOut[i] = cplex.NumVarArray(HOUR, ZONES[i], ZONES[i]);
-				
+				for (int j = 0; j < HOUR; j++){
+					mOut[i][j] = cplex.NumVarArray(minMarketFlowOut, maxMarketFlowOut);
+				}
+			}
+			
+			IloNumVar[] I = new IloNumVar[];
+			for (int j = 0; j < HOUR; j++){
+				I[j] = cplex.NumVar(maxInterCap, minInterCap);
 			}
 			
 			IloNumVar[] Hour = new IloNumVar[HOUR];
@@ -85,11 +102,37 @@ public class optimizerTester {
 			}
 			
 			// define expressions
-			IloLinearNumExpr[] exprStorageContent = new IloLinearNumExpr[HOUR];
+			IloLinearNumExpr[][] storageInflow = new IloLinearNumExpr[][];
+			for (int i = 0; i < ZONES; i++){
+				for (int j = 0; j < HOUR; j++){
+					storageInflow[i][j] = cplex.linearNumExpr();
+					storageInflow[i][j].addTerm(1.0, sOut[i][j]);
+					storageInflow[i][j].addTerm(1.0, I[j]);
+				}
+			}
 			
+			IloLinearNumExpr[][] storageOutflow = new IloLinearNumExpr[][];
+			for (int i = 0; i < ZONES; i++){
+				for(int j = 0; j < HOUR; j ++){
+					storageOutflow[i][j] = cplex.linearNumExpr();
+					storageOutflow[i][j].addTerm(1.0, sIn[i][j]);
+					storageOutflow[i][j].addTerm(-1.0, I[j]);
+				}
+			}
+			
+			IloLinearNumExpr[][] marketInflow = new IloLinearNumExpr[][];
+			for (int i = 0; i < ZONES; i++){
+				for (int j = 0; j < HOUR; j++){
+					marketInflow[i][j] = cplex.linearNumExpr();
+					marketInflow[i][j].addTerm(1.0, I[j]);
+					marketInflow[i][j].addTerm(1.0, )
+				}
+			}
+			
+			IloLinearNumExpr[] exprStorageContent = new IloLinearNumExpr[HOUR];
 			for (int i = 1; i < HOUR; i++) {
 				exprStorageContent[i] = cplex.linearNumExpr();
-				exprStorageContent[i].addTerm(1.0, e[i - 1]);
+				exprStorageContent[i].addTerm(1.0, E[i - 1]);
 				exprStorageContent[i].addTerm(n, sIn[i - 1]);
 				exprStorageContent[i].addTerm(-nInv, sOut[i - 1]);
 				}

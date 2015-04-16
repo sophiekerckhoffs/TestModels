@@ -1,19 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.internal.QuickAccess">
-		<item value="847" key="dialogWidth"/>
-		<item value="408" key="dialogHeight"/>
+		<item value="841" key="dialogWidth"/>
+		<item value="402" key="dialogHeight"/>
 		<list key="orderedProviders">
 			<item value="org.eclipse.ui.actions"/>
 		</list>
 		<list key="textArray">
 			<item value="proper"/>
+			<item value="propertie"/>
 		</list>
 		<list key="orderedElements">
 			<item value="projectProperties"/>
 		</list>
 		<list key="textEntries">
-			<item value="1"/>
+			<item value="2"/>
 		</list>
+	</section>
+	<section name="ImportExportAction">
 	</section>
 </section>

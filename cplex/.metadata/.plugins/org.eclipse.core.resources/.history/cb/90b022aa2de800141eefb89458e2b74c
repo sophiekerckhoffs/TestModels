@@ -1,0 +1,266 @@
+package optimizationModelTwoZones;
+
+import ilog.concert.*;
+import ilog.cplex.*;
+
+
+
+public class TestModel2 {
+	public static void main(String[] args) {
+		
+		int HOURS = 10; // amount of hours in simulation
+		//int ZONES = 2; // amount of zones in simulation
+		double[] loadA = {1, 10, 1, 10, 1, 10, 1, 10, 1, 10}; // load per Hour zone A
+		double[] loadB = {2, 10, 2, 10, 2, 10, 2, 10, 2, 10}; // load per Hour zone B
+		double maxEnergycontentStorage = 10;
+		double minEnergycontentStorage = 0;
+		double initialStorage = 0;
+		double maxStorageFlowIn = 1.5;
+		double minStorageFlowIn = 0;
+		double maxStorageFlowOut = 2;
+		double minStorageFlowOut = 0;
+		double maxMarketFlowIn = 10;
+		double minMarketFlowIn = 0;
+		double maxMarketFlowOut = 10;
+		double minMarketFlowOut = 0;
+		double minInterCap = -5;
+		double maxInterCap = 5;
+		double n = 0.90; // Storage efficiency
+		double nInv = 1/n; // Inverse efficiency
+		final double EPSILON = 1E-6; 
+		
+		try {
+			// define new model
+			IloCplex cplex = new IloCplex();
+			
+			// define variables
+			
+			IloNumVar[] Pa = new IloNumVar[HOURS]; // load in zone A at time i
+			for (int i = 0; i < HOURS; i++) {
+				Pa[i] = cplex.numVar(loadA[i], loadA[i]);
+			}
+			
+			IloNumVar[] Pb = new IloNumVar[HOURS]; // load in zone B at time i
+			for (int i = 0; i < HOURS; i++) {
+					Pb[i] = cplex.numVar(loadB[i], loadB[i]);
+			}
+			
+			IloNumVar[] Ea = new IloNumVar[HOURS]; // Energy storage content in Zone A at time i
+			for (int i = 0; i < HOURS; i++) {
+				Ea[i] = cplex.numVar(minEnergycontentStorage, maxEnergycontentStorage);
+			}
+			
+			IloNumVar[] Eb = new IloNumVar[HOURS]; // Energy storage content in Zone B at time i
+			for (int i = 0; i < HOURS; i++) {
+				Eb[i] = cplex.numVar(minEnergycontentStorage, maxEnergycontentStorage);
+			}
+			
+			IloNumVar[] mInA = new IloNumVar[HOURS]; // Power outflow of market A at time i
+			for (int i = 0; i < HOURS; i++) {
+				mInA[i] = cplex.numVar(minMarketFlowIn, maxMarketFlowIn);
+			}
+			
+			IloNumVar[] mOutA = new IloNumVar[HOURS]; // Power inflow of market A at time i
+			for (int i = 0; i < HOURS; i++){
+				mOutA[i] = cplex.numVar(minMarketFlowOut, maxMarketFlowOut);
+			}
+			
+			IloNumVar[] mInB = new IloNumVar[HOURS]; // Power outflow of market B at time i
+			for (int i = 0; i < HOURS; i++) {
+				mInB[i] = cplex.numVar(minMarketFlowIn, maxMarketFlowIn);
+			}
+			
+			IloNumVar[] mOutB = new IloNumVar[HOURS]; // Power inflow of market B at time i
+			for (int i = 0; i < HOURS; i++){
+				mOutB[i] = cplex.numVar(minMarketFlowOut, maxMarketFlowOut);
+			}
+			
+			IloNumVar[] sInA = new IloNumVar[HOURS]; // Storage inflow in storage A at time i
+			for (int i = 0; i < HOURS; i++){
+				sInA[i] = cplex.numVar(minStorageFlowIn, maxStorageFlowIn);
+			}
+			
+			IloNumVar[] sOutA = new IloNumVar[HOURS]; // Storage outflow of storage A at time i
+			for (int i = 0; i < HOURS; i++){
+				sOutA[i] = cplex.numVar(minStorageFlowOut, maxStorageFlowOut);
+			}
+			
+			IloNumVar[] sInB = new IloNumVar[HOURS]; // Storage inflow in storage B at time i
+			for (int i = 0; i < HOURS; i++){
+				sInB[i] = cplex.numVar(minStorageFlowIn, maxStorageFlowIn);
+			}
+			
+			IloNumVar[] sOutB = new IloNumVar[HOURS]; // Storage outflow of storage B at time i
+			for (int i = 0; i < HOURS; i++){
+				sOutB[i] = cplex.numVar(minStorageFlowOut, maxStorageFlowOut);
+			}
+			
+			IloNumVar[] I = new IloNumVar[HOURS]; // Power flow from zone A to B
+			for (int i = 0; i < HOURS; i++){
+				I[i] = cplex.numVar(minInterCap, maxInterCap);
+			}
+			
+			// define expressions
+			
+			IloLinearNumExpr[] storageContentInA = new IloLinearNumExpr[HOURS];
+			for (int i = 1; i < HOURS; i++) {
+				storageContentInA[i] = cplex.linearNumExpr();
+				storageContentInA[i].addTerm(1.0, Ea[i - 1]);
+				storageContentInA[i].addTerm(n, sInA[i - 1]);
+			}
+			
+			IloLinearNumExpr[] storageContentOutA = new IloLinearNumExpr[HOURS];
+			for (int i = 1; i < HOURS; i++) {
+				storageContentOutA[i] = cplex.linearNumExpr();
+				storageContentOutA[i].addTerm(1.0, Ea[i - 1]);
+				storageContentOutA[i].addTerm(-nInv, sOutA[i - 1]);
+			}
+			
+			IloLinearNumExpr[] storageContentInB = new IloLinearNumExpr[HOURS];
+			for (int i = 1; i < HOURS; i++) {
+				storageContentInB[i] = cplex.linearNumExpr();
+				storageContentInB[i].addTerm(1.0, Ea[i - 1]);
+				storageContentInB[i].addTerm(n, sInA[i - 1]);
+			}
+			
+			IloLinearNumExpr[] storageContentOutB = new IloLinearNumExpr[HOURS];
+			for (int i = 1; i < HOURS; i++) {
+				storageContentOutB[i] = cplex.linearNumExpr();
+				storageContentOutB[i].addTerm(1.0, Ea[i - 1]);
+				storageContentOutB[i].addTerm(-nInv, sOutA[i - 1]);
+			}
+			
+			IloLinearNumExpr[] marketOutflowA = new IloLinearNumExpr[HOURS];
+			for (int i = 0; i < HOURS; i++) {
+				marketOutflowA[i] = cplex.linearNumExpr();
+				marketOutflowA[i].addTerm(1, sInA[i]);
+				marketOutflowA[i].addTerm(1, I[i]);
+			}
+			
+			IloLinearNumExpr[] marketInflowA = new IloLinearNumExpr[HOURS];
+			for (int i = 0; i < HOURS; i++) {
+				marketInflowA[i] = cplex.linearNumExpr();
+				marketInflowA[i].addTerm(1, sOutA[i]);
+				marketInflowA[i].addTerm(-1, I[i]);
+			}
+			
+			IloLinearNumExpr[] marketOutflowB = new IloLinearNumExpr[HOURS];
+			for (int i = 0; i < HOURS; i++) {
+				marketOutflowB[i] = cplex.linearNumExpr();
+				marketOutflowB[i].addTerm(1, sInB[i]);
+				marketOutflowB[i].addTerm(-1, I[i]);
+			}
+			
+			IloLinearNumExpr[] marketInflowB = new IloLinearNumExpr[HOURS];
+			for (int i = 0; i < HOURS; i++) {
+				marketInflowB[i] = cplex.linearNumExpr();
+				marketInflowB[i].addTerm(-1, sOutB[i]);
+				marketInflowB[i].addTerm(1, I[i]);
+			}
+			
+			IloLQNumExpr objective = cplex.lqNumExpr();
+			for (int i = 0; i < HOURS; i++) {
+				objective.addTerm(1, Pa[i], Pa[i]);
+				objective.addTerm(1, mInA[i], mInA[i]);
+				objective.addTerm(1, mOutA[i], mOutA[i]);
+				objective.addTerm(2, Pa[i], mInA[i]);
+				objective.addTerm(-2, Pa[i], mOutA[i]);
+				objective.addTerm(-2, mInA[i], mOutA[i]);
+				objective.addTerm(1, Pb[i], Pb[i]);
+				objective.addTerm(1, mInB[i], mInB[i]);
+				objective.addTerm(1, mOutB[i], mOutB[i]);
+				objective.addTerm(2, Pb[i], mInB[i]);
+				objective.addTerm(-2, Pb[i], mOutB[i]);
+				objective.addTerm(-2, mInB[i], mOutB[i]);
+			}
+			
+			// define objective function
+			cplex.addMinimize(objective);
+			
+			// define constraints
+			cplex.addEq(Ea[0], initialStorage);
+			cplex.addEq(Eb[0], initialStorage);
+			
+			cplex.addLe(sOutA[0], Ea[0]);
+			cplex.addLe(sOutB[0], Eb[0]);
+			
+			IloConstraint[] energyInA = new IloConstraint[HOURS];
+			for(int i = 1; i < HOURS; i++){
+				cplex.eq(storageContentInA[i], Ea[i]);
+			}
+			IloConstraint[] energyOutA = new IloConstraint[HOURS];
+			for(int i = 1; i < HOURS; i++){
+				cplex.eq(storageContentOutA[i], Ea[i]);
+			}
+			IloConstraint[] energyInB = new IloConstraint[HOURS];
+			for(int i = 1; i < HOURS; i++){
+				cplex.eq(storageContentInB[i], Eb[i]);
+			}
+			IloConstraint[] energyOutB = new IloConstraint[HOURS];
+			for(int i = 1; i < HOURS; i++){
+				cplex.eq(storageContentOutB[i], Eb[i]);
+			}
+			
+			for(int i = 1; i < HOURS; i++) {
+				cplex.or(energyInA[i], energyOutA[i]);
+			}
+			for(int i = 1; i < HOURS; i++) {
+				cplex.or(energyInB[i], energyOutB[i]);
+			}
+				
+			
+			for(int i = 1; i < HOURS; i++) {
+				cplex.add(cplex.ifThen(cplex.ge(sInA[i], EPSILON), energyInA[i]));
+			}
+			for(int i = 1; i < HOURS; i++) {
+				cplex.add(cplex.ifThen(cplex.ge(sOutA[i], EPSILON), energyOutA[i]));
+			}
+			for(int i = 1; i < HOURS; i++) {
+				cplex.add(cplex.ifThen(cplex.ge(sInB[i], EPSILON), energyInB[i]));
+			}
+			for(int i = 1; i < HOURS; i++) {
+				cplex.add(cplex.ifThen(cplex.ge(sOutB[i], EPSILON), energyOutB[i]));
+			}
+			
+			for(int i = 0; i < HOURS; i++) {
+				cplex.addEq(mOutA[i], marketOutflowA[i]);
+			}
+			for(int i = 0; i < HOURS; i++) {
+				cplex.addEq(mInA[i], marketInflowA[i]);
+			}
+			for(int i = 0; i < HOURS; i++) {
+				cplex.addEq(mOutB[i], marketOutflowB[i]);
+			}
+			for(int i = 0; i < HOURS; i++) {
+				cplex.addEq(mInB[i], marketInflowB[i]);
+			}	
+			
+			// solve model
+			if (cplex.solve()) {
+				System.out.println("Objective function is: " + cplex.getObjValue());
+				for (int i = 0; i < HOURS; i++) {
+					System.out.println("Hour is: " + (i + 1));
+					System.out.println("Storage in A: " + cplex.getValue(sInA[i]));
+					System.out.println("Storage out A: " + cplex.getValue(sOutA[i]));
+					System.out.println("Storage in B: " + cplex.getValue(sInB[i]));
+					System.out.println("Storage out B: " + cplex.getValue(sOutB[i]));
+					System.out.println("Storage A: " + cplex.getValue(Ea[i]));
+					System.out.println("Storage B: " + cplex.getValue(Eb[i]));
+				}
+			}
+			else {
+				System.out.println("Model did not solve");
+			}
+			
+			//close cplex
+			cplex.end();
+			
+		}
+		catch(IloException exc) {
+			exc.printStackTrace();
+		}
+		
+		
+	}
+
+}

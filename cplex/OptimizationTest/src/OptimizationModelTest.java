@@ -70,8 +70,7 @@ public class OptimizationModelTest {
 				objective.addTerm(2, loadPerHour[i], sIn[i]);
 				objective.addTerm(-2, loadPerHour[i], sOut[i]);
 				objective.addTerm(-2, sIn[i], sOut[i]);
-				
-				
+			
 			}
 			
 			// define objective function

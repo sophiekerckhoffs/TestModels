@@ -8,10 +8,10 @@ import ilog.cplex.*;
 public class TestModel2 {
 	public static void main(String[] args) {
 		
-		int HOURS = 15; // amount of hours in simulation
+		int HOURS = 10; // amount of hours in simulation
 		//int ZONES = 2; // amount of zones in simulation
-		double[] loadA = {1, 10, 1, 10, 1, 10, 1, 10, 1, 10, 1, 10, 1, 10, 1, 10}; // load per Hour zone A
-		double[] loadB = {2, 10, 2, 10, 2, 10, 2, 10, 2, 10, 2, 10, 2, 10, 2, 10}; // load per Hour zone B
+		double[] loadA = {1, 10, 1, 10, 1, 10, 1, 10, 1, 10}; // load per Hour zone A
+		double[] loadB = {2, 10, 2, 10, 2, 10, 2, 10, 2, 10}; // load per Hour zone B
 		double maxEnergycontentStorage = 10;
 		double minEnergycontentStorage = 0;
 		double initialStorage = 0;
@@ -107,28 +107,30 @@ public class TestModel2 {
 				storageContentInA[i] = cplex.linearNumExpr();
 				storageContentInA[i].addTerm(1.0, Ea[i - 1]);
 				storageContentInA[i].addTerm(n, sInA[i - 1]);
+				storageContentInA[i].addTerm(-nInv, sOutA[i - 1]);
 			}
 			
-			IloLinearNumExpr[] storageContentOutA = new IloLinearNumExpr[HOURS];
+			/* IloLinearNumExpr[] storageContentOutA = new IloLinearNumExpr[HOURS];
 			for (int i = 1; i < HOURS; i++) {
 				storageContentOutA[i] = cplex.linearNumExpr();
 				storageContentOutA[i].addTerm(1.0, Ea[i - 1]);
 				storageContentOutA[i].addTerm(-nInv, sOutA[i - 1]);
-			} 
+			} */
 			
 			IloLinearNumExpr[] storageContentInB = new IloLinearNumExpr[HOURS];
 			for (int i = 1; i < HOURS; i++) {
 				storageContentInB[i] = cplex.linearNumExpr();
-				storageContentInB[i].addTerm(1.0, Eb[i - 1]);
-				storageContentInB[i].addTerm(n, sInB[i - 1]);
+				storageContentInB[i].addTerm(1.0, Ea[i - 1]);
+				storageContentInB[i].addTerm(n, sInA[i - 1]);
+				storageContentInB[i].addTerm(-nInv, sOutA[i - 1]);
 			}
 			
-			IloLinearNumExpr[] storageContentOutB = new IloLinearNumExpr[HOURS];
+			/* IloLinearNumExpr[] storageContentOutB = new IloLinearNumExpr[HOURS];
 			for (int i = 1; i < HOURS; i++) {
 				storageContentOutB[i] = cplex.linearNumExpr();
-				storageContentOutB[i].addTerm(1.0, Eb[i - 1]);
-				storageContentOutB[i].addTerm(-nInv, sOutB[i - 1]);
-			} 
+				storageContentOutB[i].addTerm(1.0, Ea[i - 1]);
+				storageContentOutB[i].addTerm(-nInv, sOutA[i - 1]);
+			} */
 			
 			IloLinearNumExpr[] marketOutflowA = new IloLinearNumExpr[HOURS];
 			for (int i = 0; i < HOURS; i++) {
@@ -189,23 +191,23 @@ public class TestModel2 {
 				energyInA[i] = cplex.eq(storageContentInA[i], Ea[i]);
 				cplex.add(energyInA[i]);
 			}
-			IloConstraint[] energyOutA = new IloConstraint[HOURS];
+			/* IloConstraint[] energyOutA = new IloConstraint[HOURS];
 			for(int i = 1; i < HOURS; i++){
 				energyOutA[i] = cplex.eq(storageContentOutA[i], Ea[i]);
-				cplex.add(energyOutA[i]); 
+				cplex.add(energyOutA[i]); */
 			}
 			IloConstraint[] energyInB = new IloConstraint[HOURS];
 			for(int i = 1; i < HOURS; i++){
 				energyInB[i] = cplex.eq(storageContentInB[i], Eb[i]);
 				cplex.add(energyInB);
 			}
-			IloConstraint[] energyOutB = new IloConstraint[HOURS];
+			/* IloConstraint[] energyOutB = new IloConstraint[HOURS];
 			for(int i = 1; i < HOURS; i++){
 				energyOutB[i] = cplex.eq(storageContentOutB[i], Eb[i]);
 				cplex.add(energyOutB[i]);
-			} 
+			} */
 			
-			for(int i = 1; i < HOURS; i++) {
+			/* for(int i = 1; i < HOURS; i++) {
 				cplex.ifThen(cplex.ge(sInA[i], EPSILON), energyInA[i]);
 			}
 			for(int i = 1; i < HOURS; i++) {
@@ -224,7 +226,7 @@ public class TestModel2 {
 			
 			for(int i = 1; i < HOURS; i++) {
 				cplex.or(energyInB[i], energyOutB[i]);
-			} 
+			} */
 	
 			
 			for(int i = 0; i < HOURS; i++) {

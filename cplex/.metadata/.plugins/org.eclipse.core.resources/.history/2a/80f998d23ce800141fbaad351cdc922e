@@ -8,10 +8,10 @@ import ilog.cplex.*;
 public class TestModel2 {
 	public static void main(String[] args) {
 		
-		int HOURS = 15; // amount of hours in simulation
+		int HOURS = 10; // amount of hours in simulation
 		//int ZONES = 2; // amount of zones in simulation
-		double[] loadA = {1, 10, 1, 10, 1, 10, 1, 10, 1, 10, 1, 10, 1, 10, 1, 10}; // load per Hour zone A
-		double[] loadB = {2, 10, 2, 10, 2, 10, 2, 10, 2, 10, 2, 10, 2, 10, 2, 10}; // load per Hour zone B
+		double[] loadA = {1, 10, 1, 10, 1, 10, 1, 10, 1, 10}; // load per Hour zone A
+		double[] loadB = {2, 10, 2, 10, 2, 10, 2, 10, 2, 10}; // load per Hour zone B
 		double maxEnergycontentStorage = 10;
 		double minEnergycontentStorage = 0;
 		double initialStorage = 0;
@@ -119,8 +119,8 @@ public class TestModel2 {
 			IloLinearNumExpr[] storageContentInB = new IloLinearNumExpr[HOURS];
 			for (int i = 1; i < HOURS; i++) {
 				storageContentInB[i] = cplex.linearNumExpr();
-				storageContentInB[i].addTerm(1.0, Eb[i - 1]);
-				storageContentInB[i].addTerm(n, sInB[i - 1]);
+				storageContentInB[i].addTerm(1.0, Ea[i - 1]);
+				storageContentInB[i].addTerm(n, sInA[i - 1]);
 			}
 			
 			IloLinearNumExpr[] storageContentOutB = new IloLinearNumExpr[HOURS];

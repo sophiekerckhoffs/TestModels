@@ -8,10 +8,10 @@ import ilog.cplex.*;
 public class TestModel2 {
 	public static void main(String[] args) {
 		
-		int HOURS = 15; // amount of hours in simulation
+		int HOURS = 10; // amount of hours in simulation
 		//int ZONES = 2; // amount of zones in simulation
-		double[] loadA = {1, 10, 1, 10, 1, 10, 1, 10, 1, 10, 1, 10, 1, 10, 1, 10}; // load per Hour zone A
-		double[] loadB = {2, 10, 2, 10, 2, 10, 2, 10, 2, 10, 2, 10, 2, 10, 2, 10}; // load per Hour zone B
+		double[] loadA = {1, 10, 1, 10, 1, 10, 1, 10, 1, 10}; // load per Hour zone A
+		double[] loadB = {2, 10, 2, 10, 2, 10, 2, 10, 2, 10}; // load per Hour zone B
 		double maxEnergycontentStorage = 10;
 		double minEnergycontentStorage = 0;
 		double initialStorage = 0;

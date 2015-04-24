@@ -17,8 +17,8 @@ public class TestModel2 {
 		
 		// Start reader
 		
-		String inputFileA = "/home/sophie/Downloads/TestCSVA.csv";
-		String inputFileB = "/home/sophie/Downloads/TestCSVB.csv";
+		String inputFileA = "/home/sophie/Downloads/Times series NL 2010.csv";
+		String inputFileB = "/home/sophie/Downloads/Time series GE 2010.csv";
 		BufferedReader brA = null;
 		BufferedReader brB= null;
 		String line = "";
@@ -271,7 +271,7 @@ public class TestModel2 {
 			// solve model
 			if (cplex.solve()) {
 				System.out.println("Objective function is: " + cplex.getObjValue());
-				for (int i = 0; i < HOURS; i++) {
+				for (int i = 0; i < HOURS; i = i + 1000) {
 					System.out.println("Hour is: " + (i + 1));
 					System.out.println("Storage in A: " + cplex.getValue(sInA[i]));
 					System.out.println("Storage out A: " + cplex.getValue(sOutA[i]));

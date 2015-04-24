@@ -15,7 +15,7 @@ public class Reader {
 		String inputFile = "/home/sophie/Downloads/TestCSV.csv";
 		BufferedReader br = null;
 		String line = "";
-		String cvsSplitby = ",";
+		//String cvsSplitby = ",";
 		ArrayList<String> hourlyData = new ArrayList<String>();
 		
 		

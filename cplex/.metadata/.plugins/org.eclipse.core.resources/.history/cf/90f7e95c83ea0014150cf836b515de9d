@@ -81,7 +81,7 @@ public class TestModel2 {
 		
 		// Start Optimization model
 		
-		int HOURS = hourlyDataDoubleA.length; // amount of hours in simulation
+		int HOURS = 5; // amount of hours in simulation
 		double[] loadA = hourlyDataDoubleA; // load per Hour zone A
 		double[] loadB = hourlyDataDoubleB; // load per Hour zone B
 		double maxEnergycontentStorage = 10;

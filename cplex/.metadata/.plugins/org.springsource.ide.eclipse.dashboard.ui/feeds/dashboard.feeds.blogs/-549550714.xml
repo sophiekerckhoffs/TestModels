@@ -5,7 +5,18 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2015-04-23T10:21:37Z</updated>
+  <updated>2015-04-23T14:27:44Z</updated>
+  <entry>
+    <title>Spring Security 4.0.1 Released</title>
+    <link rel="alternate" href="https://spring.io/blog/2015/04/23/spring-security-4-0-1-released" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Rob Winch</name>
+    </author>
+    <id>tag:spring.io,2015-04-23:2092</id>
+    <updated>2015-04-23T14:27:44Z</updated>
+    <content type="html">&lt;p&gt;I&amp;rsquo;m pleased to announce the release of Spring Security 4.0.1.RELEASE. This release is the first maintenance release of the 4.0 line and focusses on fixing any major issues that were found in the new release. For complete details on the release, refer to the &lt;a href="https://jira.spring.io/issues/?jql=fixVersion%20%3D%204.0.1%20AND%20project%20%3D%20SEC"&gt;Change Log&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;&lt;a href="http://projects.spring.io/spring-security/"&gt;Project Site&lt;/a&gt; | &lt;a href="http://docs.spring.io/spring-security/site/docs/4.0.1.RELEASE/reference/htmlsingle/"&gt;Reference&lt;/a&gt; | &lt;a href="http://docs.spring.io/spring-security/site/docs/4.0.1.RELEASE/guides/html5/"&gt;Guides&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
   <entry>
     <title>Spring Security Kerberos 1.0.0 Released</title>
     <link rel="alternate" href="https://spring.io/blog/2015/04/23/spring-security-kerberos-1-0-0-released" />
@@ -923,25 +934,6 @@ public class DemoApplication {&#xD;
 &lt;p&gt;&amp;nbsp;&lt;/p&gt;
 &lt;p&gt;&#xD;
   &lt;iframe width="560" height="315" src="https://www.youtube.com/embed/JE_DQcCNX7w" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;&#xD;
-&lt;/p&gt;</content>
-  </entry>
-  <entry>
-    <title>SpringOne2GX 2014 Replay: Performance Tuning Grails Applications</title>
-    <link rel="alternate" href="https://spring.io/blog/2015/04/08/springone2gx-2014-replay-performance-tuning-grails-applications" />
-    <category term="news" label="News and Events" />
-    <author>
-      <name>Pieter Humphrey</name>
-    </author>
-    <id>tag:spring.io,2015-04-09:2072</id>
-    <updated>2015-04-08T18:52:00Z</updated>
-    <content type="html">&lt;p&gt;Recorded at SpringOne2GX 2014. &lt;/p&gt;
-&lt;p&gt;Speaker: Lari Hotari &lt;/p&gt;
-&lt;p&gt;Essential Grails Track &lt;/p&gt;
-&lt;p&gt;Slides: &lt;a href="http://www.slideshare.net/SpringCentral/grails-performanceoptimization-s2gx-2014-41177969"&gt;http://www.slideshare.net/SpringCentral/grails-performanceoptimization-s2gx-2014-41177969 &lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Grails has great performance characteristics but as with all full stack frameworks, attention must be paid to optimize performance.&lt;/p&gt;
-&lt;p&gt;&amp;nbsp;&lt;/p&gt;
-&lt;p&gt;&#xD;
-  &lt;iframe width="560" height="315" src="https://www.youtube.com/embed/thdFMj9PRl4" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;&#xD;
 &lt;/p&gt;</content>
   </entry>
 </feed>

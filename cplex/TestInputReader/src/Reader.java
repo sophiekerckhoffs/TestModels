@@ -3,7 +3,10 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
+
+
 
 public class Reader {
 	
@@ -12,18 +15,20 @@ public class Reader {
 		String inputFile = "/home/sophie/Downloads/TestCSV.csv";
 		BufferedReader br = null;
 		String line = "";
-		String cvsSplitby = ";";
-		String[] hourlyData = new String[5];
-		double[] hourlyDataDouble = new double[hourlyData.length];
+		//String cvsSplitby = ",";
+		ArrayList<String> hourlyData = new ArrayList<String>();
+		
 		
 		try{
 			
 			br = new BufferedReader(new FileReader(inputFile));
 			
 			while((line = br.readLine()) != null){
-				hourlyData = line.split(cvsSplitby);
+				hourlyData.add(line);
+				//hourlyData = line.split(cvsSplitby);
 				
 			}
+			
 					
 		}
 		catch(FileNotFoundException e){
@@ -44,8 +49,9 @@ public class Reader {
 			}
 		}
 		
+		double[] hourlyDataDouble = new double[hourlyData.size()];
 		for(int i = 0; i < hourlyDataDouble.length; i++){
-			hourlyDataDouble[i] = Double.parseDouble(hourlyData[i]);
+			hourlyDataDouble[i] = Double.parseDouble(hourlyData.get(i));
 		}
 		System.out.println(Arrays.toString(hourlyDataDouble));
 	

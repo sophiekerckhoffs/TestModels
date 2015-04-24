@@ -279,11 +279,6 @@ public class TestModel2 {
 					System.out.println("Storage out B: " + cplex.getValue(sOutB[i]));
 					System.out.println("Storage A: " + cplex.getValue(Ea[i]));
 					System.out.println("Storage B: " + cplex.getValue(Eb[i]));
-					System.out.println("I: " + cplex.getValue(I[i]));
-					System.out.println("Market in A: " + cplex.getValue(mInA[i]));
-					System.out.println("Market out A: " + cplex.getValue(mOutA[i]));
-					System.out.println("Market in B: " + cplex.getValue(mInB[i]));
-					System.out.println("Market out B: " + cplex.getValue(mOutB[i]));
 				}
 			}
 			else {

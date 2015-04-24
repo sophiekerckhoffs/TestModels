@@ -141,7 +141,9 @@
 		<item value="false" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
 		<item value="false" key="WizardProjectsImportPage.STORE_NESTED_PROJECTS"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="/home/sophie/Documents/workspace-sts-3.6.3.SR1/cplex/OptimizationTest"/>
 			<item value="/home/sophie/Documents/workspace-sts-3.6.3.SR1/cplex/TestInputReader"/>
+			<item value="/home/sophie/Documents/workspace-sts-3.6.3.SR1/cplex/optimizationModelTwoZones"/>
 		</list>
 		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
 			<item value=""/>

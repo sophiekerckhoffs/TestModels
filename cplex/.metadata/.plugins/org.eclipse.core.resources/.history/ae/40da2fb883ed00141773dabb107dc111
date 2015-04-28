@@ -87,9 +87,9 @@ public class TestModel2 {
 		double maxEnergycontentStorage = 10;
 		double minEnergycontentStorage = 0;
 		double initialStorage = 0;
-		double maxStorageFlowIn = 5;
+		double maxStorageFlowIn = 1.5;
 		double minStorageFlowIn = 0;
-		double maxStorageFlowOut = 5;
+		double maxStorageFlowOut = 2;
 		double minStorageFlowOut = 0;
 		double maxMarketFlowIn = 10;
 		double minMarketFlowIn = 0;
@@ -99,7 +99,7 @@ public class TestModel2 {
 		double maxInterCap = 5;
 		double n = 0.90; // Storage efficiency
 		double nInv = 1/n; // Inverse efficiency
-		 
+		final double EPSILON = 1E-6; 
 		
 		try {
 			// define new model
@@ -256,12 +256,18 @@ public class TestModel2 {
 	
 			
 			for(int i = 0; i < HOURS; i++) {
-				cplex.or(cplex.addEq(mOutA[i], marketOutflowA[i]), cplex.addEq(mInA[i], marketInflowA[i]));
+				cplex.addEq(mOutA[i], marketOutflowA[i]);
 			}
 			for(int i = 0; i < HOURS; i++) {
-				cplex.or(cplex.addEq(mOutB[i], marketOutflowB[i]), cplex.addEq(mInB[i], marketInflowB[i]));
+				cplex.addEq(mInA[i], marketInflowA[i]);
 			}
-						
+			for(int i = 0; i < HOURS; i++) {
+				cplex.addEq(mOutB[i], marketOutflowB[i]);
+			}
+			for(int i = 0; i < HOURS; i++) {
+				cplex.addEq(mInB[i], marketInflowB[i]);
+			}	
+			
 			// solve model
 			if (cplex.solve()) {
 				System.out.println("Objective function is: " + cplex.getObjValue());

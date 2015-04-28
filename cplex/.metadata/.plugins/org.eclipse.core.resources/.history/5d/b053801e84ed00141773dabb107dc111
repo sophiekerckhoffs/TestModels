@@ -87,9 +87,9 @@ public class TestModel2 {
 		double maxEnergycontentStorage = 10;
 		double minEnergycontentStorage = 0;
 		double initialStorage = 0;
-		double maxStorageFlowIn = 5;
+		double maxStorageFlowIn = 1.5;
 		double minStorageFlowIn = 0;
-		double maxStorageFlowOut = 5;
+		double maxStorageFlowOut = 2;
 		double minStorageFlowOut = 0;
 		double maxMarketFlowIn = 10;
 		double minMarketFlowIn = 0;

@@ -5,7 +5,85 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2015-04-27T17:30:17Z</updated>
+  <updated>2015-04-28T22:30:00Z</updated>
+  <entry>
+    <title>This Week in Spring - April 29th, 2015</title>
+    <link rel="alternate" href="https://spring.io/blog/2015/04/28/this-week-in-spring-april-29th-2015" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Josh Long</name>
+    </author>
+    <id>tag:spring.io,2015-04-28:2099</id>
+    <updated>2015-04-28T22:30:00Z</updated>
+    <content type="html">&lt;p&gt;Welcome to another installment of &lt;em&gt;This Week in Spring&lt;/em&gt;! This week, I&amp;rsquo;m in Barcelona, Spain for the &lt;a href="http://springio.net"&gt;Spring I/O conference&lt;/a&gt;. &lt;/p&gt;&lt;p&gt;&lt;img  width="400" src ="https://pbs.twimg.com/media/CDs-ekvVEAAwKdH.jpg" /&gt;&lt;img  width="400" src ="https://pbs.twimg.com/media/CDs-eqHVAAAoizY.jpg"/&gt;&lt;br/&gt;&lt;div&gt;(can you spot &lt;a href="http://spring.io/team"&gt;your favorite Spring team&lt;/a&gt; or community member?)&lt;/div&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Spring Social lead Craig Walls just announced the &lt;a href="https://spring.io/blog/2015/04/27/spring-social-facebook-2-0-1-released"&gt;release of Spring Social Facebook 2.0.1&lt;/a&gt;, the first maintenance release in the Spring Social Facebook 2.0 line.&lt;/li&gt;
+  &lt;li&gt;the good Dr. Syer just published a &lt;a href="https://spring.io/blog/2015/04/27/binding-to-data-services-with-spring-boot-in-cloud-foundry"&gt;blog on different ways to bind services in Cloud Foundry&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring Security lead Rob Winch &lt;a href="https://spring.io/blog/2015/04/23/spring-security-4-0-1-released"&gt;just released Spring Security 4.0.1&lt;/a&gt;, the first maintenance release in the Spring Security 4.0 line&lt;/li&gt;
+  &lt;li&gt;This Week&amp;rsquo;s SpringOne2GX Replays are out! Marius Bogoevici shows us how to &lt;a href="http://spring.io/blog/2015/04/28/springone2gx-2014-replay-building-highly-modular-and-testable-business-systems-with-spring-integration"&gt;Build highly modular and testable business systems with Spring Integration&lt;/a&gt;, Brian Cavalier talks about &lt;a href="https://spring.io/blog/2015/04/28/springone2gx-2014-replay-efficient-client-server-communication-with-differential-synchronization-and-json-patch"&gt;Efficient Client-Server Communication with Differential Synchronization and JSON Patch&lt;/a&gt; and Topher Bullock and Will Tran review &lt;a href="http://spring.io/blog/2015/04/28/springone2gx-2014-replay-server-side-javascript-with-nashorn-and-spring"&gt;Server-side JavaScript with Nashorn and Spring&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;Were you at JAX London last week? No? Then you missed &lt;em&gt;Domain Driven Design&lt;/em&gt; author &lt;a href="https://jaxenter.de/jax-2015-keynote-eric-evans-ddd-microservices-18605"&gt;Eric Evan&amp;rsquo;s talk on bounded contexts with microservices&lt;/a&gt;. Check it out!&lt;/li&gt;
+  &lt;li&gt;Zurelsoft&amp;rsquo;s Sanjay Shah put together a decent, &lt;a href="http://blog.zurelsoft.com/blog/what-will-get-you-to-adopt-spring-boot-for-spring-based-applications"&gt;high-level pitch for Spring Boot&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="http://twitter.com/ewolff"&gt;Eberhard Wolff&lt;/a&gt;&amp;rsquo;s just &lt;a href="https://twitter.com/ewolff/status/592673619496538114"&gt;perfectly expressed&lt;/a&gt; the inertia behind monolithic applications: &amp;ldquo;Monolithic gravity: A large system will attract new features and changes. In the process it will become larger and eventually collapse.&amp;rdquo;&lt;/li&gt;
+  &lt;li&gt;My pal Geertjan, who works on Oracle&amp;rsquo;s Netbeans platform, just introduced a very cool contribution from &lt;a href="https://twitter.com/mehieltwit"&gt;Aggelos Karalias&lt;/a&gt; that integrates &lt;a href="https://blogs.oracle.com/geertjan/entry/new_spring_boot_integration_for"&gt;autocompletion support for Spring Boot&amp;rsquo;s metadata about configuration properties&lt;/a&gt;. This support is similar to what&amp;rsquo;s available in the latest STS and IntelliJ IDEA 14.1 releases. Very cool!&lt;/li&gt;
+  &lt;li&gt;&lt;a href="http://infoq.com"&gt;InfoQ&lt;/a&gt;&amp;rsquo;s just published a &lt;a href="http://www.infoq.com/news/2015/04/spring-security-4"&gt;nice post on Spring Security 4&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;Apache Geode (the core of Pivotal&amp;rsquo;s Gemfire distributed datagrid technology) has just passed a vote &lt;a href="https://www.mail-archive.com/general@incubator.apache.org/msg48427.html"&gt;to be an incubator project in the Apache Software Foundation&lt;/a&gt;! Congratulations!&lt;/li&gt;
+  &lt;li&gt;Our pal &lt;a href="http://twitter.com/david_welch"&gt;David Welch&lt;/a&gt; just shared a &lt;a href="https://github.com/Lemniscate/spring-metrics-jdbc"&gt;JDBC-backed &lt;code&gt;MetricRepository&lt;/code&gt;&lt;/a&gt; that looks mighty useful! Check it out!&lt;/li&gt;
+&lt;/ul&gt;</content>
+  </entry>
+  <entry>
+    <title>SpringOne2GX 2014 Replay: Building highly modular and testable business systems with Spring Integration</title>
+    <link rel="alternate" href="https://spring.io/blog/2015/04/28/springone2gx-2014-replay-building-highly-modular-and-testable-business-systems-with-spring-integration" />
+    <category term="news" label="News and Events" />
+    <author>
+      <name>Pieter Humphrey</name>
+    </author>
+    <id>tag:spring.io,2015-04-29:2100</id>
+    <updated>2015-04-28T22:29:00Z</updated>
+    <content type="html">&lt;p&gt;Recorded at SpringOne2GX 2014. &lt;/p&gt;
+&lt;p&gt;Speaker: Marius Bogoevici &lt;/p&gt;
+&lt;p&gt;Data / Integration Track &lt;/p&gt;
+&lt;p&gt;Slides: &lt;a href="http://www.slideshare.net/SpringCentral/building-modular-business-applications"&gt;http://www.slideshare.net/SpringCentral/building-modular-business-applications&lt;/a&gt; &lt;/p&gt;
+&lt;p&gt;By its very nature, Spring Integration allows for building sophisticated business systems that aggregate multiple sources of data and orchestrate a complex set of business services. But complex functionality doesn’t have to translate into complex design. In fact, through its emphasis on low coupling, Spring Integration is fostering a highly modular application design, with huge benefits in terms of understandability, reusability and testability. In this session you will learn how to design your Spring Integration applications in a modular fashion, by grouping together logically-related components into subsystems that interact with each other, a core concept of Spring XD, but can be successfully applied in any application. Besides the benefit of a heightened level of abstraction, this approach has a number of other important benefits as well: first, such subsystems are reusable, and, secondly, and equally important, they can be tested in isolation. So, after a brief discussion on reusability, the presentation will focus on how to unit test such subsystems and even complete Spring Integration applications, with the ultimate goal of applying business-centric techniques such as Behaviour-Driven Development. &lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;&lt;p&gt;&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/KA2hFQQJE-4" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <title>SpringOne2GX 2014 Replay: Server-side JavaScript with Nashorn and Spring</title>
+    <link rel="alternate" href="https://spring.io/blog/2015/04/28/springone2gx-2014-replay-server-side-javascript-with-nashorn-and-spring" />
+    <category term="news" label="News and Events" />
+    <author>
+      <name>Pieter Humphrey</name>
+    </author>
+    <id>tag:spring.io,2015-04-29:2101</id>
+    <updated>2015-04-28T22:28:00Z</updated>
+    <content type="html">&lt;p&gt;Recorded at SpringOne2GX 2014.&lt;/p&gt;
+&lt;p&gt; Speakers: Topher Bullock, Will Tran  &lt;/p&gt;
+&lt;p&gt;Web / JavaScript Track&lt;/p&gt;
+&lt;p&gt; Slides: &lt;a href="http://www.slideshare.net/SpringCentral/serverside-javascript-with-nashorn-and-spring"&gt;http://www.slideshare.net/SpringCentral/serverside-javascript-with-nashorn-and-spring &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;To stay competitive, enterprises are scrambling to find ways to rapidly deliver applications that are a pleasure to use on a wide range of devices. Microservice architectures, continuous delivery and the cloud can give businesses the agility to transform into great software businesses, but how do you actually turn those buzzwords into reality? Here we present our take on a solution. Using Spring Boot, Java 8’s Nashorn JavaScript engine, and Cloud Foundry, we’ve created a framework that makes it really easy to deliver API’s to support the rich and highly contextualized experiences that users expect in world class applications. We’d like to share with you what we’ve built, and what we’ve learned along the way.&lt;/p&gt;
+&lt;p&gt;&#xD;
+  &lt;iframe width="560" height="315" src="https://www.youtube.com/embed/ceCZte7piJE" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;&#xD;
+&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <title>SpringOne2GX 2014 Replay: Efficient Client-Server Communication with Differential Synchronization and JSON Patch</title>
+    <link rel="alternate" href="https://spring.io/blog/2015/04/28/springone2gx-2014-replay-efficient-client-server-communication-with-differential-synchronization-and-json-patch" />
+    <category term="news" label="News and Events" />
+    <author>
+      <name>Pieter Humphrey</name>
+    </author>
+    <id>tag:spring.io,2015-04-29:2102</id>
+    <updated>2015-04-28T22:27:00Z</updated>
+    <content type="html">&lt;p&gt;Recorded at SpringOne2GX 2014.&lt;/p&gt;
+&lt;p&gt;Speaker: Brian Cavalier &lt;/p&gt;
+&lt;p&gt;Web / JavaScript Track &lt;/p&gt;
+&lt;p&gt;Slides: &lt;a href="http://www.slideshare.net/SpringCentral/efficient-clientserver-communication-with-differential-synchronization-and-json-patch"&gt;http://www.slideshare.net/SpringCentral/efficient-clientserver-communication-with-differential-synchronization-and-json-patch&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The world of client-server has changed. The traditional application of REST is no longer the best fit. We're depolying applications into a world where users expect responsive UIs, on all their devices, even while disconnected. We're deploying into a world where connection latency, mobile radio usage and battery life have become primary concerns. Differential Synchronization (DS) is an algorithm that syncs data across N parties, even in the face of dropped connections, offline devices, etc. It makes more efficient use of connections by batching and sending only changes, in both directions, from client to server and from server to client. We’ll look at how it can be used with JSON Patch to synchronize application data between clients and servers over HTTP Patch, WebSocket, and STOMP, and how it can be integrated into the Spring ecosystem.&lt;/p&gt;
+&lt;p&gt;&#xD;
+  &lt;iframe width="560" height="315" src="http://www.slideshare.net/SpringCentral/efficient-clientserver-communication-with-differential-synchronization-and-json-patch" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;&#xD;
+&lt;/p&gt;</content>
+  </entry>
   <entry>
     <title>Spring Social Facebook 2.0.1 Released</title>
     <link rel="alternate" href="https://spring.io/blog/2015/04/27/spring-social-facebook-2-0-1-released" />
@@ -1020,104 +1098,6 @@ public class DemoApplication {&#xD;
   &lt;li&gt;I&amp;rsquo;m not sure I&amp;rsquo;d recommend this, but it &lt;em&gt;is&lt;/em&gt; an interesting read: &lt;a href="http://davidtanzer.net/running_multiple_spring_boot_apps_in_the_same_jvm"&gt;How to Run Multiple Spring Boot applications in the same JVM&lt;/a&gt;.&lt;/li&gt;
   &lt;li&gt;This &lt;a href="http://jaxenter.com/top-3-jpa-productivity-boosters-for-java-ee-developers-spring-data-116126.html"&gt;post - JPA productivity boosters for Java EE&lt;/a&gt; made me giggle, but it&amp;rsquo;s pretty darned awesome. It&amp;rsquo;s a look at how to make data-access with stock Java EE (but &lt;em&gt;without&lt;/em&gt; using Spring, which seems to miss the point!). The first installment highlights the Spring Data CDI integration.&lt;/li&gt;
 &lt;/ul&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring at Cloud Foundry Summit May 11-12 2015</title>
-    <link rel="alternate" href="https://spring.io/blog/2015/04/14/spring-at-cloud-foundry-summit-may-11-12-2015" />
-    <category term="news" label="News and Events" />
-    <author>
-      <name>Pieter Humphrey</name>
-    </author>
-    <id>tag:spring.io,2015-04-12:2074</id>
-    <updated>2015-04-14T13:05:00Z</updated>
-    <content type="html">&lt;p&gt;&lt;a href="http://www.cfsummit.com/"&gt;&lt;img src="https://raw.githubusercontent.com/pieterhumphrey/springio_website_images/master/Spring-CFSummit-540x200.png" width="996" height="220"&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Ok, so this is not just a list of cool Spring Cloud, Spring Boot, Devops, and Buildpack related sessions at Cloud Foundry Summit, it includes aspirational talks/keynotes from speakers, authors, leaders, and just plain old old-of-the-box thinkers that we believe you'll want to hear from and appreciate.  If you or your team is curious about &lt;a href="https://spring.io/blog/2015/01/13/configuring-it-all-out-or-12-factor-app-style-configuration-with-spring"&gt;12-factor applications&lt;/a&gt;, &lt;a href="http://speakerdeck.com/joshlong/building-bootiful-microservices-with-spring-boot"&gt;microservices&lt;/a&gt;, and &lt;a href="https://spring.io/blog/2015/02/11/java-doesn-t-suck-rockin-the-jvm"&gt;want the benefits of the JVM&lt;/a&gt;, then check out the show and &lt;a href="http://www.cfsummit.com/"&gt;register now&lt;/a&gt;!  Spring users can save 25% off registration using promo code: CFSPRING&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Monday, May 11 • 9:00am - 9:20am&lt;/strong&gt; - &lt;a href="http://cfsummit2015.sched.org/event/88c605b672874a901f827dc7e6ebf471?iframe=no&amp;w=&amp;sidebar=yes&amp;bg=no#.VSn9CfnF-bN"&gt;Keynote: Steampunk Meets Cyberpunk: The Makings of a Cloud Native Application Platform&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Speaker: &lt;a href="http://cfsummit2015.sched.org/speaker/samramji"&gt;Sam Ramji&lt;/a&gt;, CEO, Cloud Foundry Foundation&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Monday, May 11 • 9:35am - 9:55am&lt;/strong&gt; &lt;a href="http://cfsummit2015.sched.org/event/4cd1a887f7ad5508b742a8878bd97c7d?iframe=no&amp;w=&amp;sidebar=yes&amp;bg=no#.VSn9D_nF-bN"&gt;Keynote: The Oath of the Innovator &lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Speaker: &lt;a href="http://cfsummit2015.sched.org/speaker/christinemckinley"&gt;Christine McKinley&lt;/a&gt;, Mechanical Engineer, Musician, and Author &lt;/p&gt;
-&lt;p&gt;Society expects that engineers, programmers, and other technologically and scientifically gifted people are unbiased and unselfish. I'm going to make a pitch that although this trust can be uncomfortable (and sometimes misplaced, like when I'm asked to fix someone's toaster because I'm a mechanical engineer) we must do all we can to live up to the expectation that we are fact-based and uncorruptible. &lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Monday, May 11 • 10:45am - 11:15am&lt;/strong&gt; - &lt;a href="http://cfsummit2015.sched.org/event/b9a2c4ad617e38167044bb9c42801438?iframe=no&amp;w=&amp;sidebar=yes&amp;bg=no#.VSn9BvnF-bN"&gt;A Developer’s Perspective on Cloud Foundry Operations: One Month in the Trenches&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Speaker:  &lt;a href="http://cfsummit2015.sched.org/speaker/cornelia_davis.6k0rpmi"&gt;Cornelia Davis&lt;/a&gt;, Pivotal&lt;/p&gt;
-&lt;p&gt;In this session Cornelia will share lessons learned from a month spent on a team that operates a production instance of Cloud Foundry. From her first morning addressing a prod incident, through building ops dashboards, documenting how a crashed micro-bosh is recovered, and prod deploys, she will share lessons on the value of declarative, immutable infrastructure, cloud-native application design and proper abstractions. Tried and true practices such as checklists and jumpboxes remain, while new ones such as primetime deploys and even live experimentation in prod emerge. The punchline? Even as an ops novice, she was immediately productive. In this session Cornelia will present specific techniques for using BOSH, system metrics and logging, dashboards, alerting systems and more to manage your CF deployment.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Monday, May 11 • 10:45am - 11:15am&lt;/strong&gt; - &lt;a href="http://cfsummit2015.sched.org/event/20ddfb64c8241be322e5fbf2fd774be9?iframe=no&amp;w=&amp;sidebar=yes&amp;bg=no#.VSn9FPnF-bN"&gt;Cloud Foundry Architecture &amp;quot;Diego&amp;quot; Update&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Speaker:  &lt;a href="http://cfsummit2015.sched.org/speaker/onsi_fakhouri.1tk7p47e"&gt;Onsi Fakhouri&lt;/a&gt;, Pivotal&lt;/p&gt;
-&lt;p&gt;The Diego runtime has made lots of progress in the last year. We're very nearly at full feature parity with the DEAs and will be replacing them soon. This talk presents an update on the state of Diego: improvements we've made, features we're working on today, and future features we plan on starting very soon. We'll also talk about Lattice: a lightweight distribution of Diego that allows you to explore and experiment with Diego's APIs.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Monday, May 11 • 2:50pm - 3:20pm&lt;/strong&gt; -&lt;a href="http://cfsummit2015.sched.org/event/764722c82a1681ed8644b4c59f1bee6c?iframe=no&amp;w=&amp;sidebar=yes&amp;bg=no#.VSn9CPnF-bN"&gt;Devops, microservices and platforms, oh my!&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Speaker:   &lt;a href="http://cfsummit2015.sched.org/speaker/andrewclayshafer"&gt;Andrew Clay Schafer&lt;/a&gt;, Pivotal&lt;/p&gt;
-&lt;p&gt;What does it all mean? This talk will reference Cloud Foundry in relation to all the industry trends. We'll talk about 'what', but also 'why'. We'll cover the history of Agile, devops, microservices, continuous delivery in the context of intentions and capabilities to arrive at what Cloud Foundry brings to the table and what you have to bring yourself. We cover everything from Moore's Law to Conway's Law. We'll compare and contrast the difference between ad hoc automation with the cost and benefit of a structured platform. We'll look at the risk analysis to show that as the fix cost of deployment goes to zero, that continuous delivery of small changes is both faster and safer. We'll frame this with an informal model of the spectrum of effectiveness for delivering software services covering development, operations and business considerations.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Monday, May 11 • 6:00pm - 6:20pm&lt;/strong&gt; - &lt;a href="http://cfsummit2015.sched.org/event/4f10246fc982c5dbb8586c98f2c98d86?iframe=no&amp;w=&amp;sidebar=yes&amp;bg=no#.VSn9DPnF-bN"&gt;Keynote: How I Accidentally Used Open Source Ideology to Make a Bestselling Novel&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Speaker: &lt;a href="http://cfsummit2015.sched.org/speaker/andyweir"&gt;Andy Weir&lt;/a&gt; Novelist, Programmer and Space Nerd &lt;/p&gt;
-&lt;p&gt;***** TUESDAY *****&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Tuesday, May 12 • 12:00pm - 12:30pm&lt;/strong&gt; - &lt;a href="http://cfsummit2015.sched.org/event/d9b0dad922f2fba0ea8726155419e076?iframe=no&amp;w=&amp;sidebar=yes&amp;bg=no#.VSn9E_nF-bN"&gt;CF &amp;amp; The 12-factor App 101: The Secret Decoder Ring for Operations&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Speakers:  &lt;a href="http://cfsummit2015.sched.org/speaker/ragsns"&gt;Rags&lt;/a&gt; Architect Developer Advocate, EMC, &lt;a href="http://cfsummit2015.sched.org/speaker/mattcowger"&gt;Matt Cowger&lt;/a&gt; Global Architect, EMC&lt;/p&gt;
-&lt;p&gt;Although the value of Cloud Foundry for developers is increasingly clear, much of the value for perations is wrapped around the 12-factor app as well. Contrary to popular belief both developers and operations stand to gain from these principles.  This session will be focused on technical operations folks who are not coders by trade. The session will walk through a real production application that follows the principles outlined by 12-factor while demonstrating how these choices improve the lives of not just coders, but operations people too. We'll discuss techniques like service binding, logs-as-event-streams, disposability, NoSQL, etc and how to start using them in your environments today to simplify operations in the context of production environments. After attending this session, you'll be able to interact close with your developer community and speak the same language.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Tuesday, May 12 • 1:30pm - 2:00pm&lt;/strong&gt; &lt;a href="http://cfsummit2015.sched.org/event/ad30b1a167202142867663a12a0a289b?iframe=no&amp;w=&amp;sidebar=yes&amp;bg=no#.VSn9BfnF-bO"&gt;Panel Discussion: Buildpacks and Containers for Cloud Foundry&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Speakers: &lt;a href="http://cfsummit2015.sched.org/moderator/drnic1"&gt;Dr. Nic Williams, Stark &amp;amp; Wayne&lt;/a&gt;, &lt;a href="http://cfsummit2015.sched.org/speaker/julianfriedman"&gt;JF Julian Friedman IBM&lt;/a&gt;, &lt;a href="http://cfsummit2015.sched.org/speaker/colin_humphreys.1tk7p480"&gt;Colin Humphreys CloudCredo&lt;/a&gt;, &lt;a href="http://cfsummit2015.sched.org/speaker/andrewclayshafer"&gt;Andrew Clay Shafer, Pivotal&lt;/a&gt;, &lt;a href="http://cfsummit2015.sched.org/speaker/philwhln"&gt;Phil Whelan Software Architect, ActiveState&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Buildpacks, or their equivalent, are at the core most modern PaaS solutions. They are the recipe that build the application stack and leave the application developer to only have to care about their code. Buildpacks are open-source and each define a tried-and-tested way to deploy a specific programming language runtime or framework, and configure or compile the application. With the advent of portable containerization solutions like Docker we're seeing a shift in what PaaS users are expecting the developer's interface to the PaaS to be. They want to bring their pre-built applications and have the option to deploy those same pre-built applications anywhere. Join us for a panel discussion covering the history of Cloud Foundry's support for buildpacks, it's internal use of container technologies, the future of container format support in the runtime, and a healthy debate about the merits of each approach.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Tuesday, May 12 • 1:30pm - 2:00pm&lt;/strong&gt; - &lt;a href="http://cfsummit2015.sched.org/event/f34e80f19283458d7fc7c9b080060602?iframe=no&amp;w=&amp;sidebar=yes&amp;bg=no#.VSn9A_nF-bN"&gt;Deploying Microservice Architectures with Cloud Foundry&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Speaker: &lt;a href="http://cfsummit2015.sched.org/speaker/mattstine"&gt;Matt Stine&lt;/a&gt;, Pivotal &lt;/p&gt;
-&lt;p&gt;Now that you have Cloud Foundry, what are you going to do with it? This presentation will show using Spring Cloud on Cloud Foundry to quickly leverage common microservice patterns, including distributed configuration management, service discovery, intelligent routing, load balancing, and fault tolerance. Using Spring Cloud on Cloud Foundry, developers can take advantage of the cloud native microservice architectures pioneered by those building the web at places like Twitter, LinkedIn, and Netflix. In many cases they can do so running the same code with Spring Cloud wrapping the same battle-tested open source components those companies are running in production.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Tuesday, May 12 • 5:20pm - 5:40pm&lt;/strong&gt; - &lt;a href="http://cfsummit2015.sched.org/event/39f994e50d5cf33c79fe2e3260125d85?iframe=no&amp;w=&amp;sidebar=yes&amp;bg=no#"&gt;Keynote: I CAN'T LET YOU DO THAT DAVE: why the opposite of &amp;quot;free&amp;quot; is &amp;quot;slave&lt;/a&gt;&amp;quot;&lt;/p&gt;
-&lt;p&gt; Speaker:&lt;a href="http://cfsummit2015.sched.org/speaker/corydoctorow2"&gt; Cory Doctorow&lt;/a&gt;, Science Fiction Author, Activist, Journalist and Blogger &lt;/p&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring Statemachine 1.0.0.M1 Released</title>
-    <link rel="alternate" href="https://spring.io/blog/2015/04/14/spring-statemachine-1-0-0-m1-released" />
-    <category term="releases" label="Releases" />
-    <author>
-      <name>Janne Valkealahti</name>
-    </author>
-    <id>tag:spring.io,2015-04-11:2073</id>
-    <updated>2015-04-14T13:03:00Z</updated>
-    <content type="html">&lt;p&gt;We&amp;rsquo;re pleased to announce a first milestone release of &lt;strong&gt;Spring Statemachine 1.0.0.M1&lt;/strong&gt;. This blog also acts as introductory for this new project.&lt;/p&gt;&lt;p&gt;While it&amp;rsquo;d be nice to write a blog post introducing new cutting edge technology hot from a press, finite statemachines has been around longer than readers of this post(grandpa you can now lower your hand). There are technologies which come and go and then there are these fundamental technologies which stick around simply because they are proven to work.&lt;/p&gt;&lt;p&gt;Every programmer is most likely already using concepts of states of some sort in their applications. Having a simple boolean flag is already a simple statemachine on its own when application is making a decision based on that flag. Programmer then throws in more flags, enums and a bunch of if/else/break structures which is perfectly all right with simple use cases.&lt;/p&gt;&lt;p&gt;Problem with baking state and application logic together is that over time when application gets more complex code is usually starting to look like a plate full of spaghetti and every time programmer changes one part, some other parts gets broken.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Spring Statemachine&lt;/strong&gt; is a framework for application developers to use &lt;a href="http://en.wikipedia.org/wiki/UML_state_machine"&gt;Statemachine&lt;/a&gt; concepts with Spring applications and aims to provide features like:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;Easy to use flat one level state machine for simple use cases.&lt;/li&gt;
-  &lt;li&gt;Hierarchical state machine structure to ease complex state configuration.&lt;/li&gt;
-  &lt;li&gt;State machine regions to provide even more complex state configurations.&lt;/li&gt;
-  &lt;li&gt;Usage of triggers, transitions, guards and actions.&lt;/li&gt;
-  &lt;li&gt;Type safe configuration adapter.&lt;/li&gt;
-  &lt;li&gt;State machine event listeners.&lt;/li&gt;
-  &lt;li&gt;Spring IOC integration to associate beans with a statemachine.&lt;/li&gt;
-&lt;/ul&gt;&lt;p&gt;Proper state handling is very important in applications where something can happen asynchronously. This is especially important concept in cloud environments where it is easy to get into trouble with concurrency. &lt;strong&gt;Spring Statemachine&lt;/strong&gt; is another flavour of state handling what i.e. &lt;strong&gt;Spring Cloud Cluster&lt;/strong&gt; projects aims to provide with its features like &lt;em&gt;distributed locks&lt;/em&gt; and &lt;em&gt;leader election&lt;/em&gt;.&lt;/p&gt;&lt;p&gt;&lt;a href="http://projects.spring.io/spring-statemachine/"&gt;Project Page&lt;/a&gt; contains a simple example to get an idea how Spring Statemachine works. We&amp;rsquo;ve also made few &lt;a href="https://github.com/spring-projects/spring-statemachine/tree/master/spring-statemachine-samples"&gt;Samples&lt;/a&gt; which are explained more detailed in our reference documentation. These samples are packaged with &lt;strong&gt;Spring Boot&lt;/strong&gt; and uses &lt;strong&gt;Spring Shell&lt;/strong&gt; to fire up interactive shell you use to interact with a statemachine. Great way to play with things without a need to recompile to see different behaviour.&lt;/p&gt;&lt;p&gt;We&amp;rsquo;d love to hear back what people think by participating in a &lt;a href="http://projects.spring.io/spring-statemachine/"&gt;Spring Statemachine Project&lt;/a&gt; or simply creating issues or feature requests at &lt;a href="https://github.com/spring-projects/spring-statemachine"&gt;GitHub&lt;/a&gt;.&lt;/p&gt;</content>
-  </entry>
-  <entry>
-    <title>SpringOne2GX 2014 Replay: Building Awesome APIs with Grails</title>
-    <link rel="alternate" href="https://spring.io/blog/2015/04/14/springone2gx-2014-replay-building-awesome-apis-with-grails" />
-    <category term="news" label="News and Events" />
-    <author>
-      <name>Pieter Humphrey</name>
-    </author>
-    <id>tag:spring.io,2015-04-14:2076</id>
-    <updated>2015-04-14T00:14:00Z</updated>
-    <content type="html">&lt;p&gt;Recorded at SpringOne2GX 2014.&lt;/p&gt;
-&lt;p&gt;Speaker: Chris Latimer&lt;/p&gt;
-&lt;p&gt; Essential Grails Track &lt;/p&gt;
-&lt;p&gt;Slides: &lt;a href="http://www.slideshare.net/SpringCentral/building-awesome-apis-with-grails"&gt;http://www.slideshare.net/SpringCentral/building-awesome-apis-with-grails&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt; Grails provides rapid API capabilities out of the box, but the developing an API that is ready for public consumption takes a little work.&lt;/p&gt;
-&lt;p&gt;&amp;nbsp;&lt;/p&gt;
-&lt;p&gt;&#xD;
-  &lt;iframe width="560" height="315" src="https://www.youtube.com/embed/wpPczbPwrHQ" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;&#xD;
-&lt;/p&gt;</content>
-  </entry>
-  <entry>
-    <title>SpringOne2GX 2014 Replay: Ratpack and Grails 3</title>
-    <link rel="alternate" href="https://spring.io/blog/2015/04/14/springone2gx-2014-replay-ratpack-and-grails-3" />
-    <category term="news" label="News and Events" />
-    <author>
-      <name>Pieter Humphrey</name>
-    </author>
-    <id>tag:spring.io,2015-04-14:2075</id>
-    <updated>2015-04-14T00:13:00Z</updated>
-    <content type="html">&lt;p&gt;Recorded at SpringOne2GX 2014. &lt;/p&gt;
-&lt;p&gt;Speaker: Lari Hotari &lt;/p&gt;
-&lt;p&gt;Essential Grails Track &lt;/p&gt;
-&lt;p&gt;Slides: &lt;a href="http://www.slideshare.net/SpringCentral/ratpack-andgrails3-s2gx-2014"&gt;http://www.slideshare.net/SpringCentral/ratpack-andgrails3-s2gx-2014&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;One of the goals of Grails 3 is to reach out of the servlet container. Grails 3 has a concept of application profiles for choosing a certain set of core plugins to use.&lt;/p&gt;
-&lt;p&gt;&amp;nbsp;&lt;/p&gt;
-&lt;p&gt;&#xD;
-  &lt;iframe width="560" height="315" src="https://www.youtube.com/embed/ylPnu6UnFWE" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;&#xD;
-&lt;/p&gt;</content>
   </entry>
 </feed>
 

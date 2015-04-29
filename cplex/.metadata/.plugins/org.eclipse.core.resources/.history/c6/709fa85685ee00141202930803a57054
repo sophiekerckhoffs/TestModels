@@ -190,32 +190,18 @@ public class TestModel2 {
 			IloLinearNumExpr[][] marketOutflow = new IloLinearNumExpr[ZONES][HOURS];
 			for (int j = 0; j < ZONES; j++){
 				for (int i = 0; i < HOURS; i++) {
-					if (j == 0){
-						marketOutflow[j][i] = cplex.linearNumExpr();
-						marketOutflow[j][i].addTerm(1, sIn[j][i]);
-						marketOutflow[j][i].addTerm(1, I[i]);
-					}
-					if (j == 1){
-						marketOutflow[j][i] = cplex.linearNumExpr();
-						marketOutflow[j][i].addTerm(1, sIn[j][i]);
-						marketOutflow[j][i].addTerm(-1, I[i]);
-					}
+					marketOutflow[j][i] = cplex.linearNumExpr();
+					marketOutflow[j][i].addTerm(1, sIn[j][i]);
+					marketOutflow[j][i].addTerm(1, I[i]);
 				}
 			}
 			
 			IloLinearNumExpr[][] marketInflow = new IloLinearNumExpr[ZONES][HOURS];
 			for (int j = 0; j < ZONES; j ++){
 				for (int i = 0; i < HOURS; i++) {
-					if (j == 0){
-						marketInflow[j][i] = cplex.linearNumExpr();
-						marketInflow[j][i].addTerm(1, sOut[j][i]);
-						marketInflow[j][i].addTerm(-1, I[i]);
-					}
-					if (j == 1){
-						marketInflow[j][i] = cplex.linearNumExpr();
-						marketInflow[j][i].addTerm(1, sOut[j][i]);
-						marketInflow[j][i].addTerm(1, I[i]);
-					}
+					marketInflow[j][i] = cplex.linearNumExpr();
+					marketInflow[j][i].addTerm(1, sOut[j][i]);
+					marketInflow[j][i].addTerm(-1, I[i]);
 				}
 			}
 			
